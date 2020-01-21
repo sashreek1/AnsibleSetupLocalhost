@@ -1,7 +1,7 @@
 ---
-- name: installing vim-enhanced
-  dnf:
-    name: vim-enhanced
+- name: installing vim
+  yum:
+    name: vim
     state: latest
 
 - name: installing gimp

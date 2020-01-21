@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
   roles:
+    - vimConfig
     - enableRepo
     - importSSH
     - removeSoftware
     - updateOS
-    - vimConfig
     - installSoftware
     - getservice

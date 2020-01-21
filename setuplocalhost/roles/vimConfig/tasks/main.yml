@@ -1,3 +1,23 @@
 ---
-- name: install vundle plugin
-  shell: nvim +PluginInstall +qall --headless
+- name: Make Vim directory
+  become: false
+  file:
+    path: "~/.vim"
+    state: directory
+
+- name: Make Vim bundle directory
+  become: false
+  file:
+    path: "~/.vim/bundle"
+    state: directory
+
+- name: Clone vundle
+  become: false
+  git:
+    repo: "git://github.com/VundleVim/Vundle.vim.git"
+    dest: "~/.vim/bundle/Vundle.vim"
+    accept_hostkey: "no"
+    version: "master"
+
+- name: Install Vim plugins
+  command: "vim +PluginInstall +qall"
