@@ -1,0 +1,25 @@
+---
+- name: installing vim-enhanced
+  dnf:
+    name: vim-enhanced
+    state: latest
+
+- name: installing gimp
+  dnf:
+    name: gimp
+    state: latest
+
+- name: installing thunderbird
+  dnf:
+    name: thunderbird
+    state: latest
+
+- name: installing vlc
+  dnf:
+    name: vlc
+    state: latest
+
+- name: installing nmap
+  yum:
+    name: nmap
+    state: latest

@@ -1,0 +1,9 @@
+---
+
+- name: Copy file with owner and permission
+  copy:
+    src: /home/sashreek/Downloads/fake_ssh
+    dest: /home/sashreek/.ssh
+    owner: sashreek
+    group: sashreek
+    mode: u=rw,g=r,o=r

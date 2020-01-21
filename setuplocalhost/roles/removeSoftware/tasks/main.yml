@@ -1,0 +1,5 @@
+---
+- name: remove the boxes package
+  dnf:
+    name: gnome-boxes
+    state: absent

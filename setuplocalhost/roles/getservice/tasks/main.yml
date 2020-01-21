@@ -1,0 +1,11 @@
+---
+- name: install the samba package
+  yum:
+    name: samba
+    state: latest
+
+- name: enable the samba service
+  service:
+    name: smb
+    state: started
+    enabled: yes

@@ -1,0 +1,3 @@
+---
+- name: install vundle plugin
+  shell: nvim +PluginInstall +qall --headless
