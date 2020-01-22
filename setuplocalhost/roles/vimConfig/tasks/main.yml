@@ -23,13 +23,13 @@
   template: 
     src: vimrc.j2 
     dest: "~/.vim/vimrc"
-    owner: sashreek 
-    group: sashreek
+    owner: "{{owner}}" 
+    group: "{{group}}"
     mode: 644
   become: false
 
 - name: Ensure Vim Plugin directory exists
-  file: path="~/.vim" state=directory owner=sashreek group=sashreek
+  file: path="~/.vim" state=directory owner="{{owner}}" group="{{group}}"
   become: yes
 
 - name: Install Vim plugins

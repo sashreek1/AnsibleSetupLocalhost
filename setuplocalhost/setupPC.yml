@@ -1,10 +1,18 @@
 ---
 - hosts: localhost
   roles:
-    - vimConfig
-    - enableRepo
-    - importSSH
-    - removeSoftware
-    - installSoftware
-    - getservice
+    - role: vimConfig
+      group: sashreek
+      owner: sashreek
     - updateOS
+    - installSoftware
+    - role: importSSH
+      owner: sashreek
+      group: sashreek
+    - removeSoftware
+    - getservice
+    - enableRepo
+    - role: wallpaper
+      user: sashreek
+      img_path: /home/sashreek/Downloads/wallpaper1.jpg
+    
