@@ -5,6 +5,6 @@
     - enableRepo
     - importSSH
     - removeSoftware
-    - updateOS
     - installSoftware
     - getservice
+    - updateOS

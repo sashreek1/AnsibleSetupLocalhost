@@ -1,9 +1,14 @@
 ---
 
-- name: Copy file with owner and permission
+- name: import secret variable file
+  include_vars: "fake_ssh.yml"
+  no_log: true
+
+- name: copy deployment private key
   copy:
-    src: /home/sashreek/Downloads/fake_ssh
-    dest: /home/sashreek/.ssh
+    content: "{{private_key_content}}"
+    dest: "/home/sashreek/.ssh/id_rsa"
     owner: sashreek
     group: sashreek
-    mode: u=rw,g=r,o=r
+    mode: 0600
+  no_log: true

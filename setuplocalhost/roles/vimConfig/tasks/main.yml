@@ -18,6 +18,19 @@
     dest: "~/.vim/bundle/Vundle.vim"
     accept_hostkey: "no"
     version: "master"
+    
+- name: Ensure system-wide vim config only so users can set own preferences 
+  template: 
+    src: vimrc.j2 
+    dest: "~/.vim/vimrc"
+    owner: sashreek 
+    group: sashreek
+    mode: 644
+  become: false
+
+- name: Ensure Vim Plugin directory exists
+  file: path="~/.vim" state=directory owner=sashreek group=sashreek
+  become: yes
 
 - name: Install Vim plugins
   command: "vim +PluginInstall +qall"
